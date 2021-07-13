@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    /* primary */
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    /* neutral */
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+
+    --Font-size: 15px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height : 100vh;
+    background-color: var(--Very-Light-Gray);
+    font-size : var(--Font-size);
+    color : var(--Grayish-Blue)
+}
+
+
+
+/* utility classes =============================*/
+.font-dark-blue {
+    color : var(--Very-Dark-Blue);
+}
+
+.big-font {
+    font-size: 25px;
+}
+.medium-font {
+    font-size: 15px;
+}
+.small-font {
+    font-size: 10px;
+}
+
+.bold200 {
+    font-weight: 200;
+}
+.bold400 {
+    font-weight: 400;
+}
+.bold600 {
+    font-weight: 600;
+}
+
+.card {
+    /* border : 1px solid black; */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    /* border-top : 3px solid black; */
+    padding: 15px;
+    background-color: white;
+}
+
+.card p:nth-of-type(1) {
+    margin-bottom: 20px;
+}
+
+.card .icon-container {
+    text-align: right;
+    padding-top : 15px;
+}
+
+.border-top-blue {
+    border-top : 3px solid var(--Cyan)
+}
+.border-top-red {
+    border-top : 3px solid var(--Red)
+}
+.border-top-orange {
+    border-top : 3px solid var(--Orange)
+}
+.border-top-dark-blue {
+    border-top : 3px solid var(--Blue)
+}
+/* =========================================== */
+
+
+
+.container {
+    width : 80%;
+    margin: auto;
+}
+
+.container .header {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container .body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap : 25px;/* <-------------------- aaaaaaaaaaa new trick*/
+}
+
+.container .body .middle {
+    /* the display flex is for the gap to work */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 25px;/* <-------------------- aaaaaaaaaaa new trick*/
+}
+
+.container .body .middle .card {
+    width : 100%;
+}
+
+.container .body .left, 
+.container .body .middle, 
+.container .body .right {
+    flex : 1;
+}
+
+@media(max-width : 800px) {
+    * {
+        /* this prevents the over flow of cards over the .container */
+        box-sizing: border-box;
+    }
+
+    .container {
+        width : 95%;
+        /* overflow: hidden; */
+    }
+
+    .container .body {
+        flex-direction: column;
+        width : 100%;
+    }
+    
+
+    .container .body .card {
+        width: 100%;
+    }
+
+    .container .body .middle{
+        width : 100%;
+    }
+}
